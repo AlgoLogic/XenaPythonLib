@@ -70,7 +70,7 @@ class XenaManager:
             return self.ports[(module, port)]
         return None
 
-    def remove_port(self, port):
+    def remove_port(self, module, port):
         if not self.ports.has_key((module, port)):
             logger.error("Deleting unknown port")
             return
