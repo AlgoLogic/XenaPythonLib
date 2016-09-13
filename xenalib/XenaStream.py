@@ -116,8 +116,20 @@ class XenaStream:
     def set_frame_csum_off(self):
         return self.__sendCommand('ps_insertfcs', 'off')
 
-    def inject_error(self):
+    def inject_frame_csum_error(self):
         return self.__sendCommand('ps_injectfcserr', '')
+
+    def inject_sequence_error(self):
+        return self.__sendCommand('ps_injectseqerr', '')
+
+    def inject_misorder_error(self):
+        return self.__sendCommand('ps_injectmiserr', '')
+
+    def inject_payload_error(self):
+        return self.__sendCommand('ps_injectplderr', '')
+
+    def inject_test_payload_error(self):
+        return self.__sendCommand('ps_injecttplderr', '')
 
     def add_modifier(self):
         mid = len(self.modifiers.keys())
